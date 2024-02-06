@@ -1,0 +1,25 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "migration:make": "npx tsx ./node_modules/.bin/knex migrate:make",
+    "migration:latest": "npx tsx ./node_modules/.bin/knex migrate:latest",
+    "migration:rollback": "npx tsx ./node_modules/.bin/knex migrate:rollback",
+    "dev": "NODE_ENV=development tsx --watch src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "knex": "^3.1.0",
+    "pg": "^8.11.3"
+  }
+}
