@@ -1,23 +1,20 @@
+import UUIDGenerator from './UUIDGenerator';
+
 export default class UserEntity {
 	constructor(
-		readonly userId: number,
+		readonly userId: string,
 		readonly name: string | null,
 		readonly email: string,
 		readonly password: string,
 		readonly pictureUrl: string | null,
 		readonly createdAt: Date,
-		readonly updatedAt: Date
+		readonly updatedAt: Date | null
 	) {}
 
 	static create(email: string, password: string): UserEntity {
-		return new UserEntity(
-			0,
-			null,
-			email,
-			password,
-			null,
-			new Date(),
-			new Date()
-		);
+		const userId = UUIDGenerator.generate();
+		const createdAt = new Date();
+
+		return new UserEntity(userId, null, email, password, null, createdAt, null);
 	}
 }
