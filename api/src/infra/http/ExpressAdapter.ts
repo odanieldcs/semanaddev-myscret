@@ -2,8 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import 'express-async-errors';
-import UserController from '@infra/http/controller/UserControllerImpl';
-
+import RouterFactory from './RouterFactory';
 import HttpServer from './HttpServer';
 
 export default class ExpressAdapter implements HttpServer {
@@ -14,9 +13,9 @@ export default class ExpressAdapter implements HttpServer {
 		this.app.use(cors());
 		this.app.use(bodyParser.json());
 
-		const userController = new UserController();
+		const routerFactory = new RouterFactory();
 
-		this.app.use('/api/user', userController.create);
+		this.app.use('/api', routerFactory.register());
 		this.app.use('/api', (req, res) => {
 			res.json({ message: 'Hello, World!' });
 		});
