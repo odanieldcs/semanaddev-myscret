@@ -1,36 +1,26 @@
+'use client';
+import Image from 'next/image';
+import Styles from './styles.module.css';
+import Nav from '../components/nav';
+
 export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<>
-			<header className="flex w-full justify-between mb-4">
-				<button>Sair</button>
-				<span>Logo</span>
-				<span>Avatar</span>
+			<header className={Styles.header}>
+				<button>
+					<Image src="/icon/log-out.svg" alt="Sair" width={24} height={24} />
+				</button>
+				<Image
+					src="/logo.png"
+					alt="MyScret"
+					width={32}
+					height={32}
+					className="opacity-50"
+				/>
+				<Image src="/avatar/avatar5.png" alt="MyScret" width={48} height={48} />
 			</header>
-			<nav className="flex w-full mb-4">
-				<ul className="flex w-full justify-between">
-					<li>
-						<NavButton href="/dash">home</NavButton>
-					</li>
-					<li>
-						<NavButton href="/dash/messages">mensagens</NavButton>
-					</li>
-					<li>
-						<NavButton href="/dash/answers">respostas</NavButton>
-					</li>
-				</ul>
-			</nav>
+			<Nav />
 			{children}
 		</>
-	);
-}
-
-function NavButton({ href, children }: { href: string; children: string }) {
-	return (
-		<a
-			className="flex bg-[#D43A72] text-white rounded-[14px] text-[12px] p-3"
-			href={href}
-		>
-			{children}
-		</a>
 	);
 }

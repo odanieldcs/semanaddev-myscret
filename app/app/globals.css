@@ -8,3 +8,54 @@ body {
 	background-color: #ccc;
 	font-family: var(--font-exo2);
 }
+
+.backgroundGradient {
+	@apply absolute inset-0;
+	background: linear-gradient(180deg, #ffb6c7 0%, #f2f2f2 20%);
+}
+
+button[type='submit'],
+.button,
+.button-secondary {
+	@apply flex items-center justify-center w-full;
+	@apply font-semibold text-[14px] leading-[14px] rounded-[14px] p-[20px] uppercase;
+	@apply hover:opacity-90 active:opacity-100 focus:outline-none;
+}
+
+button[type='submit'],
+.button {
+	@apply bg-[#D43A72] text-white;
+	@apply ring ring-inset ring-[#D43A72];
+	@apply focus:ring-4 focus:ring-[#FFB6C7] active:bg-pink-700;
+	@apply disabled:bg-[#FFB6C7] disabled:ring-[#FFB6C7] disabled:text-[#C38494] disabled:cursor-not-allowed disabled:hover:opacity-100;
+}
+
+.button-secondary {
+	@apply bg-transparent text-[#848484];
+	@apply hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500;
+	@apply active:bg-gray-300;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+	@apply w-full bg-white border-0 ring-[#D9D9D9] ring-inset ring-1;
+	@apply p-[15px] rounded-[12px] placeholder-[#B4B4B4] text-[16px];
+	@apply focus:ring-2 focus:ring-[#FFB6C7] focus:outline-none;
+}
+
+h1,
+.title {
+	@apply font-semibold text-[18px] leading-[18px];
+}
+
+.inputGroup {
+	@apply relative w-full;
+}
+.inputGroup input[type='text'] {
+	@apply pl-[35px];
+}
+.inputGroup span {
+	@apply absolute top-1/2 left-[15px] transform -translate-y-1/2;
+	@apply text-[18px] text-[#B4B4B4];
+}

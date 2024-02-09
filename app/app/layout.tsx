@@ -23,9 +23,11 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={exo2.variable}>
-				<div className="flex flex-col items-center container mx-auto max-w-sm bg-white p-4 m-4 rounded">
-					{/* <Header /> */}
-					{children}
+				<div className="backgroundGradient">
+					<div className="flex flex-col items-center container mx-auto max-w-sm p-4 m-4">
+						{/* <Header /> */}
+						{children}
+					</div>
 				</div>
 			</body>
 		</html>

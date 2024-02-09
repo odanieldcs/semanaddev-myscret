@@ -1,0 +1,7 @@
+.header {
+	@apply flex justify-between items-center w-full mb-[30px];
+}
+
+.header button {
+	@apply bg-[#FDFEFF] p-[12px] rounded-full;
+}
